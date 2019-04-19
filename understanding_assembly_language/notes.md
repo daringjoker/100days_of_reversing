@@ -1,0 +1,46 @@
+# Understanding __Assembly__ language 
+
+## 1. empty function 
+* in *x86 or x64* the __ret__ keyword can serve for returning control flow to the parent or calling module which uses the return address saved on the stack.
+
+
+* in *AVR* this is done by using the same __ret__ keyword however the control flow is diffrent as there is no diffrent main and entry function.  
+
+
+* in *arm*  the simple return is used by jumping to the return address this is because unlike the above architectures it doesnot use stack to store the return address instread it is stored in lr register. The jump is done using branch instruction ie __bx__ command so the __ret__ equivalent for arm would be 
+
+
+### for x86 ,x64 and AVR :
+```assembly
+ ret
+```
+### for ARM :
+```assembly
+ bx lr ; lr = link register and bx = branch and exchange
+```
+## 2. returning value
+* In __x86 or x64__ Architectures the return value of the function is stored in the _EAX_ / _RAX_ register . hence to return some value the value is simply moved to this register before the _ret_ instruction.
+
+* In __AVR__  the return value is stored in multiple register since they have only 8bit registers and for 
+int in c they require 16 bits of space so the registers used are _r25_ and _r24_. Also the _lo8()_ and _hi8()_ are used to segregate the 16 bit no to 8 lower and 8 higher bits and _ldi_  (load immidiate) is used to copy values to the registers. then calling the _ret_ instruction does the job.
+
+* In __ARM__ Architecture the _r0_ register is used to store the return value so to return the value the value is first moved into _r0_ and then the _bx lr_ is used to return the control flow.
+
+> __NOTE:__   
+whenever the value to be returned is larger than the size of the register used in that architecture the return value is stored in a set of registers.  
+__for X86 arch__ :- _EDX_ : _EAX_ is used  
+__for AVR arch__ :- _r18_ : _r19_ : _r20_ : _r21_ : _r22_ : _r23_ :_r24_ : _r25_ is used since they are each 8 bit registers.  
+__for ARM arch__ :- _r0_ :_r1_ is used for 64 bit value and _r0_ is used for value upto 32 bits.
+
+### for x86 architecture
+```assembly
+mov eax, 123 ; copy value 123 to eax
+ret
+```
+### for x64 architecture
+```assembly
+mov rax, 123
+ret
+```
+### for AVR architecture
+```assembly
