@@ -18,6 +18,7 @@
 ```assembly
  bx lr ; lr = link register and bx = branch and exchange
 ```
+___
 ## 2. returning value
 * In __x86 or x64__ Architectures the return value of the function is stored in the _EAX_ / _RAX_ register . hence to return some value the value is simply moved to this register before the _ret_ instruction.
 
@@ -53,7 +54,7 @@ ret
 mov r0, #123
 bx  lr
 ```
-
+___
 ## 3. Hello world
 * The 
 
