@@ -1,7 +1,7 @@
 # Architecture Details
 
 ## 1. [x86](https://en.wikipedia.org/wiki/X86) and [x64](https://en.wikipedia.org/wiki/X86-64) architecture
-This is the most popular Architecture in computer market and uses the [complex instruction architecture](https://en.wikipedia.org/wiki/Complex_instruction_set_computer).The x86 architecture uses 32 bit address space which also means that each instruction can process 32 bit of data in each clock cycle [more on this here]().The x64 arch is merely the extension of the x86 arch using the 64 bit addressing.
+This is the most popular Architecture in computer market and uses the [complex instruction architecture](https://en.wikipedia.org/wiki/Complex_instruction_set_computer).The x86 architecture uses 32 bit address space which also means that each instruction can process 32 bit of data in each clock cycle [more on this here](https://www.techopedia.com/definition/289/32-bit).The x64 arch is merely the extension of the x86 arch using the 64 bit addressing.
 
 ## Registers 
 ### 1. General Purpose Registers 
