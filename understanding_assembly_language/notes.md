@@ -44,3 +44,16 @@ ret
 ```
 ### for AVR architecture
 ```assembly
+ldi r24, lo8(123) ;copy lower 8 bits to r24
+ldi r25, hi8(123) ;copy higher 8 bits to r25
+ret
+```
+### for ARM architecture
+```assembly
+mov r0, #123
+bx  lr
+```
+
+## 3. Hello world
+* The 
+
