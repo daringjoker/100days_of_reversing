@@ -56,5 +56,20 @@ bx  lr
 ```
 ___
 ## 3. Hello world
-* The 
+* In x86 and x64 architecture function call are invoked by _call_ instruction and the argumernt are passed as discussed in the [architecture details](arch_details.md/#x86_func_call) section. To print in x64 0r x86 architecture we can use libc printf function or we can use _write_ syscall to write into the _std out_  in linux or use _WriteConsole_ syscall in windows.  
+* In avr the technique is same for using syscall but as the machine is 8 bit but uses the 16 bit addressing space the function argument is passed in 2 registers and _rcall_ (relative call) is used to call the subroutine.  There is no other better way to achive this since avr is not usually used with operating systems.
+
+* In ARM 
+
+### for x86 and x64 
+```assembly
+.LC0:
+  .string "hello world"
+main:
+  mov edi, OFFSET FLAT:.LC0
+  jmp puts  ;since string doesnot have any format characters gcc optimizes to use the puts instead of printf
+  ```
+
+
+
 
