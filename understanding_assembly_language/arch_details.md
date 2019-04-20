@@ -62,7 +62,8 @@ These are called the __callee saved registers AKA non-Volatile Registers__.
 | -            |   _EIP_ :joy: |
 
 ### passing the arguments 
-The old way to pass the argument was to push the arguments into the stack in reverse order so that the first argument can be popped first however . by The new convention of the fastcall the arguments to the function are passed in the registers (if less than the register size and only upto some no ) as specified below.
+The old way to pass the argument was to push the arguments into the stack in reverse order so that the first argument can be popped first however . by The new convention of the fastcall the arguments to the function are passed in the registers (if less than the register size and only upto some no ) as specified below.   
+
 |Values | Registers|
 |:---:|:---:|
 |1st argument|_RAX_|
