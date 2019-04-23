@@ -58,6 +58,8 @@ ___
 ## 3. Hello world
 > __NOTE__:  
 The argumernt for functions are passed as discussed in the [architecture details](arch_details.md) section.
+
+
 * In x86 and x64 architecture function call are invoked by _call_ instruction . To print in x64 0r x86 architecture we can use libc printf function or we can use _write_ syscall to write into the _std out_  in linux or use _WriteConsole_ syscall in windows.  
 * In avr the technique is same for using syscall but as the machine is 8 bit but uses the 16 bit addressing space the function argument is passed in 2 registers and _rcall_ (relative call) is used to call the subroutine.  There is no other better way to achive this since avr is not usually used with operating systems.
 
